@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+
+public class SpecialFunction {
+    /////**Method return the reverse of a number**/////
+    public int Reverse(int num) {
+        int remainder;
+        int reverse = 0;
+        int numdash = num, count = 0;
+        while (numdash != 0) {
+            numdash /= 10;
+            ++count;
+        }
+        if (num < 10) {
+            return (num);
+        } else {
+            return (int) (((num % 10) * Math.pow(10, (count - 1))) + Reverse(num / 10));
+        }
+    }
+    /////**Method receiving and printing array of elements of any type**/////
+    public static  <T> void PrintArray(ArrayList<T> arr){
+        for(int i=0;i<arr.size();i++){
+            System.out.print(" "+arr.get(i));
+        }
+    }
+    /////**Method returning a random character**/////
+    public char RandomChar() {
+        return ((char) Math.floor(Math.random() * (123 - 97 + 1) + 97)); //>>the generated char will be lowercased<<//
+    }
+
+    /////**Method receiving a value and return a random number between 0 and this value**/////
+    public int Random(int num) {
+        return ((int) (Math.random() * (num + 1)));
+    }
+
+    /////**Method receiving 2 values and return a random number between them**/////
+    public int RandomMid(int max, int min) {
+        return ((int) Math.floor(Math.random() * (max - min + 1) + min));
+    }
+
+
+}
